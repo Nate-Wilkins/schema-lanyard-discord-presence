@@ -11,5 +11,5 @@ yarn add schema-lanyard-discord-presence
 ```typescript
 import { SchemaDiscordPresence, DiscordPresence } from 'schema-lanyard-discord-presence';
 
-const discordPresence: DiscordPresence = SchemaDiscordPresence.validate(data);
+const discordPresence: DiscordPresence = await SchemaDiscordPresence.validate(data);
 ```
