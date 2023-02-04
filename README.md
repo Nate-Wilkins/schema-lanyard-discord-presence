@@ -13,3 +13,7 @@ import { SchemaDiscordPresence, DiscordPresence } from 'schema-lanyard-discord-p
 
 const discordPresence: DiscordPresence = await SchemaDiscordPresence.validate(data);
 ```
+
+## External Resources
+
+- [Discord API Public Flags](https://discord.com/developers/docs/resources/user#user-object-user-flags)
