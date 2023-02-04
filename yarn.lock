@@ -952,7 +952,7 @@
   dependencies:
     "@types/yargs-parser" "*"
 
-"@types/yup@^0.32.0":
+"@types/yup@0.32.0":
   version "0.32.0"
   resolved "http://rancher.stark.local:4873/@types%2fyup/-/yup-0.32.0.tgz#2a19c3bbbb3aed1bd755204f83e800f9c95f249a"
   integrity sha512-Gr2lllWTDxGVYHgWfL8szjdedERpNgm44L9BDL2cmcHG7Bfd6taEpiW3ayMFLaYvlJr/6bFXDJdh6L406AGlFg==
