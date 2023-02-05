@@ -1,10 +1,9 @@
 {
   "name": "schema-lanyard-discord-presence",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "author": "nate-wilkins <nate-wilkins@code-null.com>",
   "description": "Schema to type and validate Lanyard discord presence data.",
   "main": "dist/index.js",
-  "types": "src/index.ts",
   "repository": "git@github.com:nate-wilkins/schema-lanyard-discord-presence.git",
   "scripts": {
     "build": "rm -rf ./dist && ts-node ./node_modules/webpack/bin/webpack",

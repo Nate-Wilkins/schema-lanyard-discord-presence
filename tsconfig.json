@@ -15,7 +15,7 @@
     "experimentalDecorators": true,
     "esModuleInterop": true,
     "baseUrl": ".",
-    "outDir": "lib",
+    "outDir": "dist",
     "listEmittedFiles": true
   },
   "include": ["src/**/*.tsx", "src/**/*.ts", "typings/**/*.d.ts"],
