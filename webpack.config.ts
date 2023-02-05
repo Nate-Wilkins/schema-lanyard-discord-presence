@@ -16,9 +16,7 @@ export default {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
     filename: 'index.js',
-    libraryTarget: 'umd',
-    library: 'BrowserRouter',
-    umdNamedDefine: true,
+    libraryTarget: 'commonjs',
   },
 
   plugins: [
