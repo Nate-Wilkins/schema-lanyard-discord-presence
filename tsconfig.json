@@ -17,7 +17,6 @@
     "esModuleInterop": true,
     "baseUrl": ".",
     "outDir": "dist",
-    "skipLibCheck": true,
     "listEmittedFiles": true
   },
   "include": ["src/**/*.tsx", "src/**/*.ts", "typings/**/*.d.ts"],

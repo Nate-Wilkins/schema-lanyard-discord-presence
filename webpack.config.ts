@@ -6,10 +6,10 @@ import path from 'path';
 const NODE_ENV =
   process.env.NODE_ENV !== 'production' ? 'development' : 'production';
 
-module.exports = {
+export default {
   target: 'web',
 
-  entry: './src/index.tsx',
+  entry: './src/index.ts',
 
   output: {
     pathinfo: true,
@@ -32,10 +32,13 @@ module.exports = {
     new NoEmitOnErrorsPlugin(),
   ],
 
-  cache: {
-    type: 'filesystem',
-    allowCollectingMemory: true,
-  },
+  cache:
+    NODE_ENV === 'development'
+      ? {
+          type: 'filesystem',
+          allowCollectingMemory: true,
+        }
+      : undefined,
 
   optimization: {
     minimize: true,
@@ -55,9 +58,9 @@ module.exports = {
           {
             loader: 'ts-loader',
             options: {
-              configFile: path.join(__dirname, 'tsconfig.json'),
               // Include type definition files.
               transpileOnly: false,
+              allowTsInNodeModules: true,
             },
           },
         ],
