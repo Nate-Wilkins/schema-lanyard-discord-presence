@@ -21,4 +21,11 @@ const discordPresence: DiscordPresence = await SchemaDiscordPresence.validate(da
 
 ## External Resources
 
+- [Lanyard API](https://github.com/Phineas/lanyard)
 - [Discord API Public Flags](https://discord.com/developers/docs/resources/user#user-object-user-flags)
+- [React Discord Presence](https://github.com/Nate-Wilkins/react-discord-presence)
+
+## Roadmap
+
+- Add more data properties from the Lanyard API.
+- Update yup to support nullable and default behaviors.
