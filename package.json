@@ -1,6 +1,6 @@
 {
   "name": "schema-lanyard-discord-presence",
-  "version": "0.7.2",
+  "version": "0.7.3",
   "author": "nate-wilkins <nate-wilkins@code-null.com>",
   "description": "Schema to type and validate Lanyard discord presence data.",
   "main": "dist/index.js",

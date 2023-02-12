@@ -98,11 +98,21 @@ const SchemaDiscordPresenceActivity = yup.object({
     .default(null),
 });
 
+const SchemaDiscordPresenceSpotify = yup.object({
+  album: yup.string().defined(),
+  album_art_url: yup.string().defined(),
+  artist: yup.string().defined(),
+  song: yup.string().defined(),
+  timestamps: yup.object({
+    start: yup.number().defined(),
+    end: yup.number().defined(),
+  }),
+});
+
 export const SchemaDiscordPresence = yup.object({
-  spotify: yup
-    .mixed()
-    .nullable()
-    .defined(),
+  spotify: SchemaDiscordPresenceSpotify.nullable()
+    .optional()
+    .default(null),
   listening_to_spotify: yup.boolean().defined(),
   kv: yup.mixed().defined(),
   discord_user: SchemaDiscordPresenceUser.defined(),

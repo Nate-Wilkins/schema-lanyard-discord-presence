@@ -1,7 +1,18 @@
 import { SchemaDiscordPresence } from './schema';
 
-const createLanyardApiData = () => ({
-  spotify: null,
+const createLanyardApiData = (data?: any) => ({
+  spotify: {
+    track_id: '3xGBB3KwYrSLPL5gJRMxTX',
+    timestamps: {
+      start: 1676237731539,
+      end: 1676237998539,
+    },
+    song: 'Blame Me',
+    artist: 'The Pretty Reckless',
+    album_art_url:
+      'https://i.scdn.co/image/ab67616d0000b27322a54730f9c6d2ff1eb119d2',
+    album: 'Going To Hell (Deluxe Edition)',
+  },
   listening_to_spotify: false,
   kv: {},
   discord_user: {
@@ -50,6 +61,7 @@ const createLanyardApiData = () => ({
   active_on_discord_web: false,
   active_on_discord_mobile: false,
   active_on_discord_desktop: true,
+  ...data,
 });
 
 test('when using valid discord presence schema', async () => {
@@ -67,19 +79,17 @@ test('when using valid discord presence schema', async () => {
     .resolves.toBeFalsy();
 });
 
-// TODO: Yup needs to be inspected to support this.
-//       It is suggested to add noUnknown() and strict() however this seems to break default(null).
-test.skip('when using invalid discord presence schema with extra properties', async () => {
+test('when using valid discord presence schema without spotify data', async () => {
   // Given discord presence schema.
   // And valid discord presence data.
-  const data = createLanyardApiData();
+  const data = createLanyardApiData({ spotify: undefined });
 
   // When validating the data.
   await expect(
     (async () => {
-      await SchemaDiscordPresence.validate({ ...data, extra: true });
+      await SchemaDiscordPresence.validate(data);
     })(),
   )
-    // Then the validation failed.
-    .rejects.toThrow();
+    // Then the validation passed.
+    .resolves.toBeFalsy();
 });
