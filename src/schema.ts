@@ -9,6 +9,8 @@ const SchemaDiscordPresenceUser = yup.object({
   bot: yup.boolean().defined(),
   avatar_decoration: yup.mixed().nullable(),
   avatar: yup.string().defined(),
+  global_name: yup.string().defined(),
+  avatar_decoration_data: yup.mixed(),
 });
 
 const SchemaDiscordPresenceActivityAssets = yup.object({
